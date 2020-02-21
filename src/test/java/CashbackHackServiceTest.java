@@ -1,2 +1,29 @@
-public class CashbackHackServiceTest {
+
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import ru.netology.CashbackHackService;
+
+
+
+class CashbackHackServiceTest {
+
+    @Test
+    void calculateCashback() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int amount = 900;
+        int actual = cashbackHackService.remain(amount);
+        int expected = 100;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void noCalculateCashback() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int amount = 1000;
+        int actual = cashbackHackService.remain(amount);
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
